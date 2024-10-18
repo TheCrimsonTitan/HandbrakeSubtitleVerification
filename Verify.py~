@@ -5,10 +5,17 @@ def main():
     #Handbrake generates logs every time you encode. Paste in where it's located on your PC
     HandbrakeLogDirectory="C:\\Users\\Anton\\AppData\\Roaming\\HandBrake\\logs"
     
+    Error="time went backwards"
+    os.chdir(HandbrakeLogDirectory)
 
     for filename in os.listdir(HandbrakeLogDirectory):
-        print(filename)
+        with open(filename, 'r') as fp:
 
+            #dumps all lines into the content variable
+            content=fp.read()
+            
+            if Error in content:
+                print(filename)
 
 
 
