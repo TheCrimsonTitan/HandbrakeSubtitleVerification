@@ -1,7 +1,6 @@
 import os
-import PySimpleGUI as sg
 
-def VerifySubtitles():
+def main():
 
     #Handbrake generates logs every time you encode. Paste in where it's located on your PC
     HandbrakeLogDirectory="C:\\Users\\Anton\\AppData\\Roaming\\HandBrake\\logs"
@@ -22,30 +21,6 @@ def VerifySubtitles():
                 print(filename)
 
 
-
-
-
-def main():
-
-    layout = [
-
-
-
-            [sg.Text("Choose the folder where the handbrake logs are stored"), sg.Input(key="-DIR-"), sg.FolderBrowse()],
-
-
-             ]
-
-
-    window = sg.Window("verify subtitles", layout)
-
-
-    while True:
-        event, values = window.read()
-        if event in (sg.WINDOW_CLOSED, "Exit"):
-            break
-
-    window.close()
 
 
 
